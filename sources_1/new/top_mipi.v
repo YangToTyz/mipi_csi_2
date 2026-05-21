@@ -60,6 +60,7 @@ mipi_csi_module u_mipi_csi_module(
     .clk_rxn(clk_rxn),
     .data_rxp(data_rxp),
     .data_rxn(data_rxn),
+    
     .cl_stopstate(cl_stopstate),
     .cl_enable(1'b1),
     .dl_stopstate(dl_stopstate),
