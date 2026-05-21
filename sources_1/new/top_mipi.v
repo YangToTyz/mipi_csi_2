@@ -26,7 +26,7 @@ module top_mipi(
     input   wire    clk_rxp,
     input   wire    clk_rxn,
     input   wire    [3:0]   data_rxp,
-    input   wire    [3:0]   data_rxn,
+    input   wire    [3:0]   data_rxn
     );
 
 wire clk_250m;
@@ -45,14 +45,14 @@ clk_wiz_0 u_clk_wiz_0
     .clk_in1(clk_250m)      // input clk_in1
 );
 
-wire            cl_stopstate,
-wire            cl_enable,
-wire    [3:0]   dl_stopstate,
-wire    [3:0]   dl_enable,
-wire            rxbyteclkhs,
-wire    [3:0]   dl_rxsynchs,
-wire    [31:0]  dl_rxdatahs,
-wire            dl_rxvalidhs 
+wire            cl_stopstate;
+wire            cl_enable;
+wire    [3:0]   dl_stopstate;
+wire    [3:0]   dl_enable;
+wire            rxbyteclkhs;
+wire    [3:0]   dl_rxsynchs;
+wire    [31:0]  dl_rxdatahs;
+wire            dl_rxvalidhs;
 mipi_csi_module u_mipi_csi_module(
     .core_clk(clk_250m),
     .core_rst(rst_n),
@@ -72,10 +72,10 @@ mipi_csi_module u_mipi_csi_module(
     .dl_rxvalidhs(dl_rxvalidhs) 
 );
 
-wire            payload_vaild,
-wire    [31:0]  payload_data,
-wire    [5:0]   dt,
-wire    [3:0]   vc,
+wire            payload_vaild;
+wire    [31:0]  payload_data;
+wire    [5:0]   dt;
+wire    [3:0]   vc;
 mipi_csi_packet_decoder mipi_csi_packet_decoder(
     .clk(clk_250m),
     .rst_n(rst_n),

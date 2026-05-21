@@ -89,7 +89,8 @@ wire clk_hs_750m;
                 // 数据与 valid 映射到对应的 Byte 槽位
                 .rx_byte_data  (phy_rx_data_hs[i*8 +: 8]), 
                 .rx_valid      (phy_rx_valid_hs[i]),
-                .lp_is_stop    ()
+                .lp_is_stop    (),
+                .tuning_done   ()
             );
         end
     endgenerate
